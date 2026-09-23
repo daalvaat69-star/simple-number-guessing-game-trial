@@ -1,0 +1,42 @@
+import java.util.Scanner;
+import java.util.Random;
+public class Main {
+    public static void main(String[]args){
+      Scanner scanner = new Scanner(System.in);
+      Random random = new Random();
+
+        int ran = random.nextInt(1, 101);
+        int guess;
+        int guesses = 0;
+
+        System.out.print("Enter your guess: ");
+        guess = scanner.nextInt();
+        guesses++;
+
+        do {
+            if (guess > ran) {
+                System.out.print("Wrong guess!!! TOO big, TRY AGAIN: ");
+                guess = scanner.nextInt();
+                guesses++;
+            }
+            else if (guess < ran) {
+                System.out.print("Wrong guess!!! TOO small, TRY AGAIN: ");
+                guess = scanner.nextInt();
+                guesses++;
+            }
+            else {
+                System.out.println("Your guess is right!");
+                System.out.println("That took you " + guesses + " guesses");
+            }
+
+        } while (guess != ran);
+
+
+
+        scanner.close();
+
+
+
+
+    }
+}
